@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.examplelistview.Entities.Logement;
@@ -40,7 +41,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtTitre;
+        public TextView txtTitre;
+        public Button btnDetail;
 
 
 
@@ -49,7 +51,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
             txtTitre = itemView.findViewById(R.id.txtTitre);
 
-            Button btnDetail
+            btnDetail = itemView.findViewById(R.id.btnDetailButton);
 
 
 
@@ -78,8 +80,15 @@ public class RecyclerViewActivity extends AppCompatActivity {
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
             try {
-                Logement logement = this._logementList.get(position);
+               final Logement logement = this._logementList.get(position);
                 holder.txtTitre.setText(logement.getTitre());
+
+                holder.btnDetail.setOnClickListener (new View.onClickListener(){
+                    @Override
+                    public void onClick(View view){
+                        logement.getPrix();
+                    }
+                });
             }catch(Exception e){
                 Log.e( "Erreur", e.getMessage());
             }
