@@ -2,48 +2,77 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    tools:context=".item_logement">
+    >
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         app:srcCompat="@drawable/logement_social" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_weight="1"
-        android:orientation="vertical">
+        >
 
-    <TextView
-        android:id="@+id/txtTitre"
-        android:fontFamily="sans-serif-black"
-        android:text="Liste de logements"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtTitre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Liste de logements"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        />
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            />
 
-    <Button
-        android:id="@+id/btnDetailButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:text="Button" />
+        <TextView
+            android:id="@+id/txtSurface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Surface : 12m2" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="Prix : 650$" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10sp"
+            >
+        </Space>
+
+        <Button
+            android:id="@+id/btnDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:text="Détails"
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
+
+
+
+
 
 
 </LinearLayout>
